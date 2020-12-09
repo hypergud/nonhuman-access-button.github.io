@@ -11,8 +11,8 @@
 }
 
 body {
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 
 .container {
@@ -24,12 +24,12 @@ body {
 }
 
 .content {
-  max-width: 400px;
-  width: 100%;
+  max-width: 380px;
+  width: 95%;
   height: 100%;
   margin: 0 auto;
   position: relative;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.85);
   padding: 25px;
   /* margin: auto auto; */
   margin-top: 50px;
@@ -43,7 +43,7 @@ h1{
   font-family: dogica;
   font-size: 0.8em;
   line-height: 1.5em;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1.8vh;
 }
 
 h2{
@@ -62,21 +62,22 @@ h2{
 
 .btn-toggle{
   display:inline-block;
-  padding:10px;
-  background-color:#000;
-  border-radius:5px;
-  color:#fff;
+  padding:12px 0px 10px;
+  /* background-color:rgb(0, 0, 0); */
+  border: 1.5px solid rgb(255, 255, 255);
+  border-radius:6px;
+  color:rgb(255, 255, 255);
   user-select:none;
   -webkit-user-select:none;
   cursor:pointer;
 
   position: relative;
   width: 100%;
-  height: 3em;
+  /* height: 3em; */
   text-align: center;
 
   font-family: dogica;
-  font-size: 0.7em;
+  font-size: 0.75em;
 
   /* font-family: 'Syncopate Bold', sans-serif;
   font-size: 1em; */

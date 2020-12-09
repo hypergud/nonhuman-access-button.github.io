@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>nonhuman-access-button</title>
+    <link rel="stylesheet" href="./source/css/reset.css">
+    <link rel="stylesheet" href="./source/css/style.css">
+    <link rel="stylesheet" href=".source/css/bootstrap.min.css">
+    <style>
+      @font-face {
+        font-family:'dogica';
+        src: url(./source/font/dogica/dogica-webfont.woff) format('woff'), 
+        url(./source/font/dogica/dogica.ttf) format('truetype');
+      }
+
+      @font-face {
+        font-family:'Syncopate Regular';
+        src: url(./source/font/Syncopate/Syncopate-Regular.ttf) format('truetype');
+      }
+
+      @font-face {
+        font-family:'Syncopate Bold';
+        src: url(./source/font/Syncopate/Syncopate-Bold.ttf) format('truetype');
+        font-style: normal;
+        /* font-stretch: 1% 500%;*/
+      }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+      <div class="content">
+        <h1>ALLOW<br>STRANGER'S<br>ACCESS TO</h1>
+        <h2>#NONHUMAN<br>#GUD</h2>
+        <div class="container-fluid pt-3 pb-3">
+          <b id="btn-toggle" class="btn-toggle"><span>Approve Access</span></b>
+        </div>
+      </div>
+      
+    </div>
+</body>
+<script>
+  var host = location.hostname;
+  var ws = new WebSocket('ws://' + host + ':8000');
+  var _isOn = false;
+  var $btnToggle = document.querySelector('#btn-toggle');
+  var $btnToggleSpan = $btnToggle.firstElementChild;
+  var sendMessage = function(value) {
+    ws.send(value);
+  }
+  $btnToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    _isOn = !_isOn;
+    $btnToggleSpan.innerHTML = (_isOn) ? 'Reject Access' : 'Approve Access';
+    sendMessage(Number(_isOn));
+  });
+  ws.onopen = function(e) {
+    sendMessage(Number(_isOn));
+  }
+  ws.onmessage = function(e) {
+  }
+</script>
+</html>

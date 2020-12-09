@@ -69,4 +69,18 @@
   ws.onmessage = function(e) {
   }
 </script>
+<script>
+document.querySelector('video').controls= false;
+
+  var promise = document.querySelector('video').play();
+
+if (promise !== undefined) {
+  promise.then(_ => {
+    // 자동 재생 시작!
+  }).catch(error => {
+    // 자동 재생이 막힘.
+    // "Play" 버튼을 노출해 유저가 재생을 시작할 수 있도록 한다
+  });
+}
+</script>
 </html>

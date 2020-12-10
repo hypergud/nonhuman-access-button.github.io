@@ -79,10 +79,10 @@ h2{
   margin-bottom:1vh;
 }
 
-.btn-toggle:hover{
+/* .btn-toggle:hover{
   color: #a2ffc4;
   border-color: #a2ffc4;
-}
+} */
 
 
 @media screen and (min-width:320px) and (max-width:768px){

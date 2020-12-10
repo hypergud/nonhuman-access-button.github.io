@@ -89,11 +89,11 @@ h2{
   h1{
     font-size: 0.6em;
     line-height: 1.7em;
-    color: yellow;
+    /* color: yellow; */
   }
 
   h2{
-    font-size: 1.7em;
+    font-size: 1.5em;
     line-height: 1.15em;
   }
 
